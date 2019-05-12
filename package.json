@@ -1,0 +1,28 @@
+{
+  "name": "assert.macro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/assert.macro.js",
+  "source": "src/assert.macro.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -rf dist/ && microbundle --format es,cjs"
+  },
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lionralfs/assert.macro.git"
+  },
+  "author": "Lion Ralfs <lion.ralfs@gmail.com> (https://github.com/lionralfs)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lionralfs/assert.macro/issues"
+  },
+  "homepage": "https://github.com/lionralfs/assert.macro#readme",
+  "dependencies": {
+    "babel-plugin-macros": "2.5.1"
+  },
+  "devDependencies": {
+    "microbundle": "0.11.0"
+  }
+}
