@@ -24,6 +24,16 @@ In your babel config, add `"macros"` to your plugins:
 }
 ```
 
+#### Enabling the assertions
+
+To include the assertions in the babel output, make sure you set the `ENABLE_ASSERTIONS` environment variable to `"true"`. For example:
+
+```sh
+ENABLE_ASSERTIONS=true npm run build
+```
+
+All usages of of the call to `assert`, including the import will be removed completely, if `ENABLE_ASSERTIONS` is **not** `"true"`.
+
 ## Usage
 
 ```js
@@ -44,7 +54,3 @@ class ShoppingCart {
 - Documents intent
 - More explicit than comments
 - Able to catch bugs
-
-## Removing it in production
-
-`assert()` is only meant to be used during development. To disable it in production, set either `BABEL_ENV` or `NODE_ENV` to `production`.
