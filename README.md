@@ -14,7 +14,7 @@ This project relies on [babel-plugin-macros](https://github.com/kentcdodds/babel
 npm install --save-dev assert.macro babel-plugin-macros
 ```
 
-### Babel config
+#### Babel config
 
 In your babel config, add `"macros"` to your plugins:
 
