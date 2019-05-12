@@ -6,6 +6,8 @@ A babel macro to add assertions for development/testing purposes.
 
 </div>
 
+[![Build Status](https://travis-ci.com/lionralfs/assert.macro.svg?branch=master)](https://travis-ci.com/lionralfs/assert.macro)
+
 ## Installation
 
 This project relies on [babel-plugin-macros](https://github.com/kentcdodds/babel-plugin-macros), you can install both from npm:
