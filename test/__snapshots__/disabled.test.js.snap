@@ -1,5 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`assert.macro - disabled Doesn't throw if not used as a call expression: Doesn't throw if not used as a call expression 1`] = `
+"
+import assert from '../dist/assert.macro';
+
+assert;
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+
+"
+`;
+
+exports[`assert.macro - disabled Doesn't throw if used without condition argument: Doesn't throw if used without condition argument 1`] = `
+"
+import assert from '../dist/assert.macro';
+
+assert();
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+
+"
+`;
+
 exports[`assert.macro - disabled Remove import & references even if used: Remove import & references even if used 1`] = `
 "
 import assert from '../dist/assert.macro';

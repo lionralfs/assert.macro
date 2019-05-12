@@ -27,6 +27,28 @@ pluginTester({
       error: function(error) {
         return error instanceof MacroError && /only import assert as default/.test(error.message) && /nonExistentExport/.test(error.message);
       }
+    },
+    {
+      title: 'Throws used without condition argument',
+      code: `
+        import assert from '../dist/assert.macro';
+
+        assert();
+      `,
+      error: function(error) {
+        return error instanceof MacroError && /at least 1 argument/.test(error.message);
+      }
+    },
+    {
+      title: 'Throws if not used as a call expression',
+      code: `
+        import assert from '../dist/assert.macro';
+
+        assert;
+      `,
+      error: function(error) {
+        return error instanceof MacroError && /must call/.test(error.message);
+      }
     }
   ]
 });

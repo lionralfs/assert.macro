@@ -23,6 +23,11 @@ function assertMacro({ references, state, babel }) {
   }
 
   defaultImport.forEach(referencePath => {
+    if (!enabled) {
+      referencePath.parentPath.remove();
+      return;
+    }
+
     if (referencePath.parentPath.type !== 'CallExpression') {
       throw new MacroError('you must call the macro');
     }
@@ -30,10 +35,6 @@ function assertMacro({ references, state, babel }) {
     const args = referencePath.parentPath.get('arguments');
     if (args.length < 1) {
       throw new MacroError(`assert() needs at least 1 argument (the assertion condition).`);
-    }
-
-    if (!enabled) {
-      referencePath.parentPath.remove();
     }
   });
 }

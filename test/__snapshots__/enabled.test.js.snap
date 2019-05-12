@@ -37,3 +37,27 @@ import assert, { nonExistentExport } from '../dist/assert.macro';
 MacroError: You should only import assert as default. You are also importing nonExistentExport.
 "
 `;
+
+exports[`assert.macro - enabled Throws if not used as a call expression: Throws if not used as a call expression 1`] = `
+"
+import assert from '../dist/assert.macro';
+
+assert;
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+MacroError: you must call the macro
+"
+`;
+
+exports[`assert.macro - enabled Throws used without condition argument: Throws used without condition argument 1`] = `
+"
+import assert from '../dist/assert.macro';
+
+assert();
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+MacroError: assert() needs at least 1 argument (the assertion condition).
+"
+`;
