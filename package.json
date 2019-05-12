@@ -1,7 +1,7 @@
 {
   "name": "assert.macro",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.1.0",
+  "description": "A babel macro to add assertions for development/testing purposes.",
   "source": "src/assert.macro.js",
   "main": "dist/assert.macro.js",
   "module": "dist/assert.macro.module.js",
