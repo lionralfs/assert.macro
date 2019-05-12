@@ -47,5 +47,6 @@
   },
   "jest": {
     "testEnvironment": "node"
-  }
+  },
+  "types": "src/index.d.ts"
 }
