@@ -55,6 +55,12 @@ class ShoppingCart {
 - More explicit than comments
 - Able to catch bugs
 
+## Inspirations
+
+- [Refactoring](https://martinfowler.com/books/refactoring.html) by Martin Fowler
+- [Programming With Assertions](https://docs.oracle.com/javase/8/docs/technotes/guides/language/assert.html) (Java)
+- [Invariant](https://github.com/zertosh/invariant) by Facebook
+
 ## License
 
 [MIT](LICENSE) © Lion Ralfs
