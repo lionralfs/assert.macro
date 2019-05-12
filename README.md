@@ -54,3 +54,7 @@ class ShoppingCart {
 - Documents intent
 - More explicit than comments
 - Able to catch bugs
+
+## License
+
+[MIT](LICENSE) © Lion Ralfs

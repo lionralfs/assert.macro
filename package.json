@@ -19,6 +19,13 @@
     "macro",
     "assertions"
   ],
+  "files": [
+    "src",
+    "dist",
+    "impl/src",
+    "impl/dist",
+    "impl/package.json"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lionralfs/assert.macro.git"
