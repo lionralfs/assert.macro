@@ -2,13 +2,23 @@
   "name": "assert.macro",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/assert.macro.js",
   "source": "src/assert.macro.js",
+  "main": "dist/assert.macro.js",
+  "module": "dist/assert.macro.module.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -rf dist/ && microbundle --format es,cjs"
+    "test": "npm run test:disabled && npm run test:enabled",
+    "test:disabled": "jest test/disabled.test.js",
+    "test:enabled": "cross-env ENABLE_ASSERTIONS=true jest test/enabled.test.js",
+    "build": "npm run build:core && npm run build:impl",
+    "build:core": "rm -rf dist/ && microbundle --format es,cjs",
+    "build:impl": "rm -rf impl/dist && microbundle --format es,cjs --cwd impl"
   },
-  "keywords": [],
+  "keywords": [
+    "babel-plugin-macros",
+    "assert",
+    "macro",
+    "assertions"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lionralfs/assert.macro.git"
@@ -23,6 +33,12 @@
     "babel-plugin-macros": "2.5.1"
   },
   "devDependencies": {
+    "babel-plugin-tester": "6.1.0",
+    "cross-env": "5.2.0",
+    "jest": "24.8.0",
     "microbundle": "0.11.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
   }
 }

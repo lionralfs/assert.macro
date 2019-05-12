@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`assert.macro - disabled Remove import & references even if used: Remove import & references even if used 1`] = `
+"
+import assert from '../dist/assert.macro';
+
+function doSomething(val) {
+    assert(val > 0, 'Custom error message');
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+function doSomething(val) {}
+"
+`;
+
+exports[`assert.macro - disabled Remove import if unused: Remove import if unused 1`] = `
+"
+import assert from '../dist/assert.macro';
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+
+"
+`;
+
+exports[`assert.macro - disabled Throws if anything other than the default export is used: Throws if anything other than the default export is used 1`] = `
+"
+import assert, { nonExistentExport } from '../dist/assert.macro';
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+MacroError: You should only import assert as default. You are also importing nonExistentExport.
+"
+`;

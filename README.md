@@ -27,13 +27,14 @@ In your babel config, add `"macros"` to your plugins:
 ## Usage
 
 ```js
-import assert from 'assert.macro'; // will be gone in production
+import assert from 'assert.macro';
 
-class BankAccount {
-  withdrawMoney(amount) {
-    assert(amount > 0, 'Withdraw amount should be a positive number'); // also gone in prod
+class ShoppingCart {
+  applyDiscount(discount) {
+    assert(discount > 0, "Discount can't be 0 or negative.");
+    assert(discount <= 1, "The discount shouldn't make it more expensive.");
 
-    this._total -= amount;
+    this._total *= discount;
   }
 }
 ```

@@ -1,29 +1,24 @@
 const { createMacro, MacroError } = require('babel-plugin-macros');
 
-module.exports = createMacro(myMacro, MacroError);
+module.exports = createMacro(assertMacro, MacroError);
 
-function myMacro({ references, state, babel }) {
-  const { template, getEnv } = babel;
+function assertMacro({ references, state, babel }) {
+  const { template } = babel;
   const { default: defaultImport = [], ...otherReferences } = references;
-  const isDev = getEnv() !== 'production';
+  const enabled = process.env.ENABLE_ASSERTIONS === 'true';
 
   const invalidImports = Object.keys(otherReferences);
   if (invalidImports.length > 0) {
     throw new MacroError(`You should only import assert as default. You are also importing ${invalidImports.join(', ')}.`);
   }
 
-  const assertTemplate = template(`
-    function assert(condition, message) {
-      if (!Boolean(condition)) {
-        var error = new Error(message || 'Unknown reason');
-        error.name = 'AssertionError';
-        // error.stack = (error.stack || '').split(/\\n/g).slice(1).join('\\n');
-        throw error;
-      }
-    }
-  `);
+  if (defaultImport.length < 1) {
+    return;
+  }
 
-  if (isDev) {
+  const assertTemplate = template(`const assert = require('assert.macro/impl');`);
+
+  if (enabled) {
     state.file.ast.program.body.unshift(assertTemplate());
   }
 
@@ -37,7 +32,7 @@ function myMacro({ references, state, babel }) {
       throw new MacroError(`assert() needs at least 1 argument (the assertion condition).`);
     }
 
-    if (!isDev) {
+    if (!enabled) {
       referencePath.parentPath.remove();
     }
   });

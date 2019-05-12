@@ -1,0 +1,14 @@
+{
+  "name": "impl",
+  "version": "0.1.0",
+  "private": true,
+  "description": "The assert implementation for assert.macro",
+  "main": "dist/impl.js",
+  "module": "dist/impl.module.js",
+  "source": "src/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "microbundle build --raw",
+    "test": "exit 1;"
+  }
+}
