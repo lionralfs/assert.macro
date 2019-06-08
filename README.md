@@ -6,7 +6,8 @@ A babel macro to add assertions for development/testing purposes.
 
 </div>
 
-[![Build Status](https://travis-ci.com/lionralfs/assert.macro.svg?branch=master)](https://travis-ci.com/lionralfs/assert.macro) [![Greenkeeper badge](https://badges.greenkeeper.io/lionralfs/assert.macro.svg)](https://greenkeeper.io/)
+[![Build Status](https://travis-ci.com/lionralfs/assert.macro.svg?branch=master)](https://travis-ci.com/lionralfs/assert.macro)
+[![Greenkeeper badge](https://badges.greenkeeper.io/lionralfs/assert.macro.svg)](https://greenkeeper.io/)
 
 ## Installation
 
