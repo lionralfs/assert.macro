@@ -40,7 +40,7 @@
     "babel-plugin-macros": "2.6.1"
   },
   "devDependencies": {
-    "babel-plugin-tester": "6.2.1",
+    "babel-plugin-tester": "6.3.1",
     "cross-env": "5.2.0",
     "jest": "24.8.0",
     "microbundle": "0.11.0"
