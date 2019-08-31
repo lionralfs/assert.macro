@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "babel-plugin-tester": "7.0.1",
-    "cross-env": "5.2.0",
+    "cross-env": "5.2.1",
     "jest": "24.8.0",
     "microbundle": "0.11.0"
   },
