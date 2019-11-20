@@ -37,7 +37,7 @@
   },
   "homepage": "https://github.com/lionralfs/assert.macro#readme",
   "dependencies": {
-    "babel-plugin-macros": "2.6.2"
+    "babel-plugin-macros": "2.7.0"
   },
   "devDependencies": {
     "babel-plugin-tester": "7.0.2",
