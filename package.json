@@ -11,7 +11,8 @@
     "test:enabled": "cross-env ENABLE_ASSERTIONS=true jest test/enabled.test.js",
     "build": "npm run build:core && npm run build:impl",
     "build:core": "rm -rf dist/ && microbundle --format es,cjs",
-    "build:impl": "rm -rf impl/dist && microbundle --format es,cjs --cwd impl"
+    "build:impl": "rm -rf impl/dist && microbundle --format es,cjs --cwd impl",
+    "release": "np"
   },
   "keywords": [
     "babel-plugin-macros",
@@ -43,7 +44,8 @@
     "babel-plugin-tester": "7.0.4",
     "cross-env": "6.0.0",
     "jest": "24.8.0",
-    "microbundle": "0.11.0"
+    "microbundle": "0.11.0",
+    "np": "6.3.2"
   },
   "jest": {
     "testEnvironment": "node"
