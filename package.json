@@ -6,7 +6,7 @@
   "main": "dist/assert.macro.js",
   "module": "dist/assert.macro.module.js",
   "scripts": {
-    "test": "npm run test:disabled && npm run test:enabled",
+    "test": "npm run build && npm run test:disabled && npm run test:enabled",
     "test:disabled": "jest test/disabled.test.js",
     "test:enabled": "cross-env ENABLE_ASSERTIONS=true jest test/enabled.test.js",
     "build": "npm run build:core && npm run build:impl",
