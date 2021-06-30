@@ -1,4 +1,4 @@
-const pluginTester = require('babel-plugin-tester');
+const pluginTester = require('babel-plugin-tester').default;
 const plugin = require('babel-plugin-macros');
 
 pluginTester({
@@ -24,8 +24,9 @@ pluginTester({
     {
       title: 'Throws if anything other than the default export is used',
       code: `import assert, { nonExistentExport } from '../dist/assert.macro';`,
+      snapshot: false,
       error: function(error) {
-        return error instanceof MacroError && /only import assert as default/.test(error.message) && /nonExistentExport/.test(error.message);
+        return error instanceof plugin.MacroError && /only import assert as default/.test(error.message) && /nonExistentExport/.test(error.message);
       }
     },
     {
@@ -35,8 +36,9 @@ pluginTester({
 
         assert();
       `,
+      snapshot: false,
       error: function(error) {
-        return error instanceof MacroError && /at least 1 argument/.test(error.message);
+        return error instanceof plugin.MacroError && /at least 1 argument/.test(error.message);
       }
     },
     {
@@ -46,8 +48,9 @@ pluginTester({
 
         assert;
       `,
+      snapshot: false,
       error: function(error) {
-        return error instanceof MacroError && /must call/.test(error.message);
+        return error instanceof plugin.MacroError && /must call/.test(error.message);
       }
     }
   ]
