@@ -38,14 +38,14 @@
   },
   "homepage": "https://github.com/lionralfs/assert.macro#readme",
   "dependencies": {
-    "babel-plugin-macros": "2.8.0"
+    "babel-plugin-macros": "^2.8.0"
   },
   "devDependencies": {
-    "babel-plugin-tester": "7.0.4",
-    "cross-env": "6.0.0",
-    "jest": "24.8.0",
-    "microbundle": "0.12.3",
-    "np": "6.3.2"
+    "babel-plugin-tester": "^10.1.0",
+    "cross-env": "^7.0.3",
+    "jest": "^27.0.6",
+    "microbundle": "^0.13.3",
+    "np": "^7.5.0"
   },
   "jest": {
     "testEnvironment": "node"
